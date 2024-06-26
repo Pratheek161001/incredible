@@ -14,6 +14,7 @@ import tannirbhavi from './crousel assets/tannirbhavi beach.jpg';
 import room1 from './crousel assets/Room - Google Maps_files/726e6211_z.jpg';
 import sasihithlu from './crousel assets/sasihithlu beach.jpg';
 import bappanadu from './crousel assets/bappanadu.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const beaches = [
   { image: panambur, title: 'Panambur Beach', text: 'Explore the beauty of Panambur Beach with golden sands and vibrant sunsets.', link: '#' },
@@ -40,6 +41,12 @@ const homeStays = [
 ];
 
 function HomeCardCarousel() {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
     <Carousel data-bs-theme="dark">
       <Carousel.Item>
@@ -54,7 +61,7 @@ function HomeCardCarousel() {
           </div>
         </div>
         <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }}>View all</Button>
+          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/')}>View all</Button>
         </div>
       </Carousel.Item>
 
@@ -70,7 +77,7 @@ function HomeCardCarousel() {
           </div>
         </div>
         <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }}>View all</Button>
+          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/religious-places')}>View all</Button>
         </div>
       </Carousel.Item>
 
@@ -86,7 +93,7 @@ function HomeCardCarousel() {
           </div>
         </div>
         <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }}>View all</Button>
+          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/historical-places')}>View all</Button>
         </div>
       </Carousel.Item>
 
@@ -102,7 +109,7 @@ function HomeCardCarousel() {
           </div>
         </div>
         <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }}>View all</Button>
+          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/homestays')}>View all</Button>
         </div>
       </Carousel.Item>
     </Carousel>
