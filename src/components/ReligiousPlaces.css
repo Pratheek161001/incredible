@@ -1,0 +1,61 @@
+.religiousplaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .custom-card {
+    width: 16rem; 
+    margin: 10px;
+    background-color: white;
+    color: slategray;
+    border: 1px solid lightgray;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .custom-card h2 {
+    font-size: 1.25rem;
+  }
+  
+  .custom-card .card-text {
+    font-size: 0.875rem; 
+  }
+  
+  .custom-modal .modal-dialog {
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  .modal-body-content {
+    display: flex;
+  align-items: flex-start;
+  }
+  
+  .modal-description {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .modal-image {
+    width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  }
+  
+  .modal-description p {
+    margin: 0 0 10px;
+  }
+  
+  .modal-description a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .modal-description a:hover {
+    text-decoration: underline;
+  }

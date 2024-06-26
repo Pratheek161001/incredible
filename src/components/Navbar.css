@@ -1,43 +1,52 @@
+.navtabs {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo-container {
-    justify-content: end;
-  }
-  
-  .searchbar {
-    padding-right: 150px;
-  }
-  
-  .search-input {
-    display: none;
-    border: none;
-  }
-  
-  .hover-trigger:hover + .search-input {
-    display: inline-block;
-  }
-  
-  .navtabs {
-    max-height: 100px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .navicons {
-    font-weight: bold;
-    font-size: 18px;
-    text-decoration: none;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 70%;
-    max-height: 80vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    z-index: 1000;
-    overflow-y: auto;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navicons {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif; 
+}
+
+.navicons:hover {
+  color: #555;
+}
+.nav-dropdown {
+  margin-right: 20px; 
+}
+.logo-container {
+  margin-left: '30%';
+  margin-right: auto;
+}
+
+
+
+

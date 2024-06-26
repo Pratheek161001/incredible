@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../assets/logo.jpg';
-import { ReactComponent as MySVG } from '../assets/search.svg';
+import logo from '../assets/Logo.png';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 function NavScrollExample() {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
@@ -24,70 +23,54 @@ function NavScrollExample() {
 
   return (
     <>
-      <Navbar className="bg-body-tertiary">
-        <Container className="logo-container">
-          <Navbar.Brand href="#home">
-            <img
-              src={logo}
-              width="150"
-              height="100"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />
-          </Navbar.Brand>
-        </Container>
-        <Form className="d-flex searchbar">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="me-2 search-input"
-            aria-label="Search"
-          />
-          <Button variant="outline-success" className="hover-trigger">
-            <MySVG />
-          </Button>
-        </Form>
-      </Navbar>
-
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-white px-5">
         <Container fluid>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Container>
-              <Nav className="me-auto my-2 my-lg-0 navtabs" navbarScroll>
-                {[
-                  'Religious Places',
-                  'Historical Places',
-                  'Surfing',
-                  'Kayaking',
-                  'Homestays',
-                  'Resorts',
-                  'Way to reach',
-                  'Traditions',
-                  'Agri Tourism',
-                ].map((item, index) => (
-                  <Nav.Link
-                    key={index}
-                    href={`#action${index + 1}`}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                    className="navicons"
-                    style={{
-                      color: selectedNavItem === index ? '#555' : '#333',
-                    }}
-                  >
-                    {item}
-                  </Nav.Link>
-                ))}
-              </Nav>
-            </Container>
-            {isOverlayVisible && (
-              <div className="overlay" onMouseLeave={handleMouseLeave}>
-                blah blah blah
-              </div>
-            )}
+            <Nav className="me-auto my-2 my-lg-0 navtabs d-flex w-100 justify-content-around " navbarScroll>
+            <Nav.Link as={Link} to="/" className="navicons bold nav-dropdown">Home</Nav.Link>
+
+              <Dropdown as={Nav.Item} className="nav-dropdown">
+                <Dropdown.Toggle as={Nav.Link} className="navicons bold">Adventure</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item as={Link} to="/surfing">Surfing</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/kayaking">Kayaking</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+
+              <Dropdown as={Nav.Item} className="nav-dropdown">
+                <Dropdown.Toggle as={Nav.Link} className="navicons bold">Places</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item as={Link} to="/religious-places">Religious Places</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/historical-places">Historical Places</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+
+              <Dropdown as={Nav.Item} className="nav-dropdown">
+                <Dropdown.Toggle as={Nav.Link} className="navicons bold">Stays</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item as={Link} to="/homestays">Homestays</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/resorts">Resorts</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+
+              <Navbar.Brand href="/" className="mx-auto logo-container">
+                <img
+                  src={logo}
+                  width="150"
+                  height="100"
+                  className="logoImg"
+                  alt="Logo"
+                />
+              </Navbar.Brand>
+            </Nav>
           </Navbar.Collapse>
         </Container>
+        {isOverlayVisible && (
+          <div className="overlay" onMouseLeave={handleMouseLeave}>
+            blah blah blah
+          </div>
+        )}
       </Navbar>
     </>
   );
