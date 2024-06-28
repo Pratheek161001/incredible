@@ -25,7 +25,7 @@ const ReligiousPlaces = () => {
         title: 'Polali',
         imgSrc: polali,
         description: 'Experience divine serenity at Polali Temple, Mangalore: culture, spirituality, tranquility.',
-        additionalInfo: 'Polali Rajarajeshwari Temple, situated in Polali, Dakshina Kannada district, Karnataka, dates back to the 8th century AD, commissioned by King Suratha. The main deity is Shri Rajarajeshwari, depicted in a unique clay idol with medicinal properties. The temple showcases Hindu architecture, featuring ornate wooden carvings and copper plates on its roofs. Daily and special poojas are overseen by Head Priest Madhava Bhat. Annual festivities, notably the Polali Chendu festival, celebrate good triumphing over evil through football matches. The month-long March festival draws visitors worldwide.',
+        additionalInfo: 'Polali Rajarajeshwari Temple in Dakshina Kannada, Karnataka, dates back to the 8th century AD. It features a unique medicinal clay idol of Shri Rajarajeshwari and is overseen by Head Priest Madhava Bhat. Annual festivities, including the Polali Chendu festival, attract visitors worldwide.',
         location: 'https://www.google.com/maps?q=polali+temple+mangalore'
       },
       {

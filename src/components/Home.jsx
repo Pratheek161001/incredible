@@ -1,9 +1,8 @@
 import React from 'react'
-import myvedio from '../assets/lv_0_20240608134952.mp4'
+import myvedio from '../assets/lv_0_20240616232243.mp4'
 import './Home.css';
 import randomads from '../assets/Screenshot 2024-06-02 181425.png'
 import HomeMostVisited from './crousels/HomeMostVisited';
-import { Container } from 'react-bootstrap';
 import HomeCardCrousel from './crousels/HomeCardCrousels';
 import ContactInfo from './EndPage';
 import Traditions from './Traditions';
@@ -32,6 +31,9 @@ const Home = () => {
 <h1 className='popular'>Most Visited in Mangaluru</h1>
 <p>Mangaluru is a coastal gem boasting pristine beaches, lush greenery, rich cultural heritage, and vibrant local cuisine, making it a captivating destination in Karnataka.</p>
 <HomeCardCrousel />
+<div className="ads">
+    <img src={randomads} alt="" /> 
+  </div>
 <Traditions/>
 <ContactInfo />
 

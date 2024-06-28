@@ -21,7 +21,7 @@ function PlaceCard({ image, title, text, link }) {
       <Card.Body>
         <Card.Title><h2>{title}</h2></Card.Title>
         <Card.Text style={cardTextStyle}>{text}</Card.Text>
-        <Button variant="primary" href={link} target="_blank" rel="noopener noreferrer">Know more</Button>
+        <Button variant="primary" href={link} target="_blank" rel="noopener noreferrer">View in Maps</Button>
       </Card.Body>
     </Card>
   );

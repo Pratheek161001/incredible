@@ -12,7 +12,7 @@ const ContactInfo = () => {
               <strong>Email:</strong> support@nikil.com
             </ListGroup.Item>
             <ListGroup.Item>
-              <strong>Phone:</strong> +91 87223 05365
+              <strong>Phone:</strong> +#########
             </ListGroup.Item>
             <ListGroup.Item>
               <strong>Address:</strong> Basic address
@@ -23,10 +23,10 @@ const ContactInfo = () => {
           <h2>Helplines</h2>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <strong>Customer Service:</strong> +91 87223 05365
+              <strong>Customer Service:</strong> +#######
             </ListGroup.Item>
             <ListGroup.Item>
-              <strong>Technical Support:</strong> +91 87223 05365
+              <strong>Technical Support:</strong> +#########
             </ListGroup.Item>
             <ListGroup.Item>
               <strong>Emergency:</strong> +102

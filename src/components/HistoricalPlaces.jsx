@@ -42,6 +42,7 @@ const HistoricalPlaces = () => {
         location: 'https://maps.app.goo.gl/3NaKcee6a4GSjtzk9?g_st=ac'
 
       }
+
     ];
   return (
     <div className="religiousplaces">

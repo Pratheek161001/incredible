@@ -6,7 +6,7 @@ import kambla from './crousels/crousel assets/WhatsApp Image 2024-05-31 at 12.25
 import koridakatta from './crousels/crousel assets/kori da katta.avif';
 
 const traditionsData = {
-  dhaiva: {
+  DhaivaAaradhane: {
     img: kola,
     description: 'Dhaiva Aaradhane is a traditional ritual of worship in the Tulu Nadu region of Karnataka.',
   },
@@ -37,41 +37,16 @@ const Traditions = () => {
 
   return (
     <div className="traditions-container">
-      <div className="tradition-card" onClick={() => openModal('dhaiva')}>
-        <div className="tradition-image">
-          <img src={kola} alt="Dhaiva Aaradhane" />
-          <div className="image-overlay">
-            <span>Dhaiva Aaradhane</span>
+      {Object.keys(traditionsData).map((key) => (
+        <div className="tradition-card" key={key} onClick={() => openModal(key)}>
+          <div className="tradition-image">
+            <img src={traditionsData[key].img} alt={key} />
+            <div className="image-overlay">
+              <span>{key.charAt(0).toUpperCase() + key.slice(1)}</span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="tradition-card" onClick={() => openModal('kambla')}>
-        <div className="tradition-image">
-          <img src={kambla} alt="Kambla" />
-          <div className="image-overlay">
-            <span>Kambla</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="tradition-card" onClick={() => openModal('kori')}>
-        <div className="tradition-image">
-          <img src={koridakatta} alt="Kori da Katta" />
-          <div className="image-overlay">
-            <span>Kori da Katta</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="tradition-card" onClick={() => openModal('yakshagana')}>
-        <div className="tradition-image">
-          <img src={yakshagana} alt="Yakshagana" />
-          <div className="image-overlay">
-            <span>Yakshagana</span>
-          </div>
-        </div>
-      </div>
+      ))}
 
       {modalData && (
         <div className="modal" onClick={closeModal}>

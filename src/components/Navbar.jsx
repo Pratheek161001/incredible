@@ -62,6 +62,7 @@ function NavScrollExample() {
                   className="logoImg"
                   alt="Logo"
                 />
+                <span className="navbar-text">Where Coastal Splendor Meets Rich Heritage...</span>
               </Navbar.Brand>
             </Nav>
           </Navbar.Collapse>

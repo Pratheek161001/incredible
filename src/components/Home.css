@@ -13,9 +13,17 @@
 .content{
     padding-top: 30px;
 }
-.ads{
-    background-color: rgb(247, 247, 249);
-}
+.ads {
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    text-align: center;
+  }
+  
+  .ads img {
+    max-width: 100%; 
+    height: auto; 
+  }
+  
 .popular{
     padding: 30px;
 }
@@ -47,5 +55,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 10px 20px 10px 20px; */
+    
 }
