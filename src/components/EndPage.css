@@ -1,0 +1,10 @@
+.bg-blue {
+    background-color: #64a8f1 !important;
+    color: white;
+  }
+  
+  .bg-blue .list-group-item {
+    background-color: #64a8f1!important;
+    color: white;
+  }
+  

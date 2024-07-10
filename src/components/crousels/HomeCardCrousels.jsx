@@ -2,6 +2,10 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import PlaceCard from '../PlaceCard';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop' 
+import './Crousel.css';
+
 import polali from './crousel assets/polali.jpg';
 import kateel from './crousel assets/kateel.jpg';
 import mangaladevi from './crousel assets/mangaladevi.jpg';
@@ -13,8 +17,7 @@ import nitkbeach from './crousel assets/NITK beach.jpg';
 import tannirbhavi from './crousel assets/tannirbhavi beach.jpg';
 import room1 from './crousel assets/Room - Google Maps_files/726e6211_z.jpg';
 import sasihithlu from './crousel assets/sasihithlu beach.jpg';
-import bappanadu from './crousel assets/bappanadu.jpg';  
-import { useNavigate } from 'react-router-dom';
+import bappanadu from './crousel assets/bappanadu.jpg';
 
 const beaches = [
   { image: panambur, title: 'Panambur Beach', text: 'Explore the beauty of Panambur Beach with golden sands and vibrant sunsets.', link: 'https://maps.app.goo.gl/4a64C1yhWCV3phpP6?g_st=ac' },
@@ -47,72 +50,61 @@ function HomeCardCarousel() {
     navigate(path);
   };
 
+  const renderCards = (items) => (
+    <div className='d-flex justify-content-center cards'>
+      {items.map((item, index) => (
+        <div key={index} className='place-card'>
+          <PlaceCard image={item.image} title={item.title} text={item.text} link={item.link} />
+        </div>
+      ))}
+    </div>
+  );
+
   return (
-    <Carousel data-bs-theme="dark">
-      <Carousel.Item>
-        <div className='d-flex justify-content-center'>
-          <h3 style={{ padding: '40px', color: 'slategray' }}>Major Beaches</h3>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <div className='cards d-flex justify-content-center'>
-            {beaches.map((beach, index) => (
-              <PlaceCard key={index} image={beach.image} title={beach.title} text={beach.text} link={beach.link} />
-            ))}
+    <>
+      <ScrollToTop />
+      <Carousel data-bs-theme="dark" className="w-100" style={{padding:'75px'}}>
+        <Carousel.Item>
+          <div className='text-center'>
+            <h3 className='py-3 text-slategray'>Major Beaches</h3>
           </div>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/Surfing')}>View all</Button>
-        </div>
-      </Carousel.Item>
+          {renderCards(beaches)}
+          <div className='text-center'>
+            <Button variant="primary" className='my-4' onClick={() => handleNavigate('/Surfing')}>View all</Button>
+          </div>
+        </Carousel.Item>
 
-      <Carousel.Item>
-        <div className='d-flex justify-content-center'>
-          <h3 style={{ padding: '40px', color: 'slategray' }}>Major Religious Places</h3>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <div className='cards d-flex justify-content-center'>
-            {religiousPlaces.map((place, index) => (
-              <PlaceCard key={index} image={place.image} title={place.title} text={place.text} link={place.link} />
-            ))}
+        <Carousel.Item>
+          <div className='text-center'>
+            <h3 className='py-3 text-slategray'>Major Religious Places</h3>
           </div>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/religious-places')}>View all</Button>
-        </div>
-      </Carousel.Item>
+          {renderCards(religiousPlaces)}
+          <div className='text-center'>
+            <Button variant="primary" className='my-4' onClick={() => handleNavigate('/religious-places')}>View all</Button>
+          </div>
+        </Carousel.Item>
 
-      <Carousel.Item>
-        <div className='d-flex justify-content-center'>
-          <h3 style={{ padding: '40px', color: 'slategray' }}>Major Historical Places</h3>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <div className='cards d-flex justify-content-center'>
-            {historicalPlaces.map((place, index) => (
-              <PlaceCard key={index} image={place.image} title={place.title} text={place.text} link={place.link} />
-            ))}
+        <Carousel.Item>
+          <div className='text-center'>
+            <h3 className='py-3 text-slategray'>Major Historical Places</h3>
           </div>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/historical-places')}>View all</Button>
-        </div>
-      </Carousel.Item>
+          {renderCards(historicalPlaces)}
+          <div className='text-center'>
+            <Button variant="primary" className='my-4' onClick={() => handleNavigate('/historical-places')}>View all</Button>
+          </div>
+        </Carousel.Item>
 
-      <Carousel.Item>
-        <div className='d-flex justify-content-center'>
-          <h3 style={{ padding: '40px', color: 'slategray' }}>Home Stays</h3>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <div className='cards d-flex justify-content-center'>
-            {homeStays.map((stay, index) => (
-              <PlaceCard key={index} image={stay.image} title={stay.title} text={stay.text} link={stay.link} />
-            ))}
+        <Carousel.Item>
+          <div className='text-center'>
+            <h3 className='py-3 text-slategray'>Home Stays</h3>
           </div>
-        </div>
-        <div className='d-flex justify-content-center'>
-          <Button variant="primary" style={{ margin: '50px' }} onClick={() => handleNavigate('/homestays')}>View all</Button>
-        </div>
-      </Carousel.Item>
-    </Carousel>
+          {renderCards(homeStays)}
+          <div className='text-center'>
+            <Button variant="primary" className='my-4' onClick={() => handleNavigate('/homestays')}>View all</Button>
+          </div>
+        </Carousel.Item>
+      </Carousel>
+    </>
   );
 }
 

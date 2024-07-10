@@ -25,42 +25,36 @@ const traditionsData = {
 };
 
 const Traditions = () => {
-  const [modalData, setModalData] = useState(null);
+  const [expandedTradition, setExpandedTradition] = useState(null);
 
-  const openModal = (key) => {
-    setModalData(traditionsData[key]);
-  };
-
-  const closeModal = () => {
-    setModalData(null);
+  const toggleExpand = (key) => {
+    if (expandedTradition === key) {
+      setExpandedTradition(null);
+    } else {
+      setExpandedTradition(key);
+    }
   };
 
   return (
     <div className="traditions-container">
       {Object.keys(traditionsData).map((key) => (
-        <div className="tradition-card" key={key} onClick={() => openModal(key)}>
+        <div className="tradition-card" key={key}>
           <div className="tradition-image">
             <img src={traditionsData[key].img} alt={key} />
-            <div className="image-overlay">
-              <span>{key.charAt(0).toUpperCase() + key.slice(1)}</span>
-            </div>
+          </div>
+          <div className="tradition-title">
+            <h3>{key.charAt(0).toUpperCase() + key.slice(1)}</h3>
+          </div>
+          <div className={`tradition-description ${expandedTradition === key ? 'expanded' : ''}`}>
+            {expandedTradition === key && (
+              <p>{traditionsData[key].description}</p>
+            )}
+          </div>
+          <div className="read-more" onClick={() => toggleExpand(key)}>
+            {expandedTradition === key ? 'Read Less' : 'Read More'}
           </div>
         </div>
       ))}
-
-      {modalData && (
-        <div className="modal" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={closeModal}>&times;</span>
-            <div className="modal-image">
-              <img src={modalData.img} alt="Modal" />
-            </div>
-            <div className="modal-description">
-              <p>{modalData.description}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

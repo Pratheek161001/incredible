@@ -11,12 +11,13 @@ const Home = () => {
   return (
     <>
     <div className="video-content">
-  <video autoPlay loop muted style={{
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover', 
+  <video autoPlay loop controls style={{
+      maxWidth: '100%',
+      maxHeight: '100%',
+      objectFit: 'cover',
     }}>
-    <source src={myvedio} />
+    <source src={myvedio} type="video/mp4"/>
+    Your browser does not support the video tag.
   </video>
   <p className='content'>Mangaluru, nestled along the southwestern coast of India, is a city where nature and culture beautifully intertwine. Renowned for its pristine beaches like Panambur and Surathkal, the city offers serene views of the Arabian Sea. Mangaluru's lush greenery, punctuated by swaying coconut palms and vibrant gardens, creates a tranquil escape. The historic St. Aloysius Chapel and the majestic Kadri Manjunath Temple showcase the city's rich architectural heritage. With its delicious coastal cuisine, warm hospitality, and stunning sunsets, Mangaluru captivates the heart of every visitor, making it a true gem of Karnataka.</p>
   <div className="ads">

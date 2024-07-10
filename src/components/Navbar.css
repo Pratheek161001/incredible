@@ -1,3 +1,17 @@
+body {
+  padding-top: 100px; /* Adjust this value according to the actual height of the navbar */
+  margin: 0; /* Ensure there is no margin on the body */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it is above other content */
+  background-color: white;
+}
+
+
 .navtabs {
   flex: 1;
   display: flex;
@@ -33,29 +47,31 @@
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  font-family: 'Arial', sans-serif; 
+  font-family: 'Arial', sans-serif;
 }
 
 .navicons:hover {
   color: #555;
 }
+
 .nav-dropdown {
-  margin-right: 20px; 
+  margin-right: 20px;
 }
-.logo-container {
-  margin-left: '30%';
-  margin-right: auto;
-}
+
 .navbar-text {
   font-family: 'Arial', sans-serif;
   font-size: 14px;
   color: #555;
-  margin-top: 50px;
-  margin-left: auto;
   font-weight: bold;
 }
 
+.dropdown-menu {
+  top: 100%; /* Make sure dropdown menu appears below the navbar */
+}
 
-
-
-
+/* Hide the logo container on screens larger than LG (992px) */
+@media (min-width: 992px) {
+  .d-lg-none {
+    display: none !important;
+  }
+}

@@ -9,6 +9,8 @@ import HistoricalPlaces from './components/HistoricalPlaces';
 import Homestays from './components/HomeStays';
 import Adventure from './components/Adventure';
 import Surfing from './components/Surfing';
+import ScrollToTop from './components/crousels/ScrollToTop';
+import IncredibleMangalore from './components/About';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
     <div className='App'>
     <Router>
     <NavScrollExample/>
+    <ScrollToTop />
       <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/religious-places" element={<ReligiousPlaces />} />
@@ -23,8 +26,7 @@ function App() {
       <Route path="/homestays" element={<Homestays />} />
       <Route path="/kayaking" element={<Adventure />} />
       <Route path="/surfing" element={<Surfing />} />
-
-
+      <Route path="/about" element={<IncredibleMangalore/>} />
 
       </Routes>
     </Router>

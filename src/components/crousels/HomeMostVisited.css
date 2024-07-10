@@ -1,24 +1,52 @@
-.overlay-bg {
-  color: white;
+/* Existing styles for the carousel and cards */
+.carousel .card {
+  height: 100%;
 }
 
-.text-container {
-  margin: 10px;
-  position: absolute;
-  top: 20px; 
-  left: 20px; 
+.card-img-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.title-text {
-  font-size: 60px;
+.card-title {
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .card-text {
-  font-size: 18px;
-  font-weight: 400;
-  background-color: rgba(65, 61, 61, 0.6); 
-  padding: 10px;
-  border-radius: 5px;
-  max-width: 300px; 
+  font-size: 1rem;
+  max-height: 80px; /* Truncate the text */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
+
+.card-text.expanded {
+  max-height: none; /* Expand to show full text */
+}
+
+.read-more {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: block;
+}
+
+.text-container {
+  background-color: rgba(0, 0, 0, 0.6); /* Background color with opacity for better text visibility */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+  }
+}
+
